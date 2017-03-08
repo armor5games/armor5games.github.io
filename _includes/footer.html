@@ -1,18 +1,35 @@
+{% if page.locale == 'ru' %}
+    {% assign home_url = '/ru' %}
+{% else %}
+    {% assign home_url = "/" %}
+{% endif %}
+
 <footer id="footer">
     <div class="container">
         <p>
-            <a class="social-link icon-twitter" href="/ru" target="_blank"></a>
-            <a class="social-link icon-instagram" href="/ru" target="_blank"></a>
-            <a class="social-link icon-youtube" href="/ru" target="_blank"></a>
+            <a class="social-link icon-twitter"
+               href="{{ home_url }}"
+               target="_blank"></a>
+            <a class="social-link icon-instagram"
+               href="{{ home_url }}"
+               target="_blank"></a>
+            <a class="social-link icon-youtube"
+               href="{{ home_url }}"
+               target="_blank"></a>
         </p>
         <hr class="special">
         <p>© 2017 Armor5Games. All Rights Reserved.</p>
     </div>
 </footer>
 
-<a href="/ru#header" id="go-to-top-link" title="Scroll to the top"><em class="icon-arrow-up"></em></a>
+<a href="{{ page.permalink }}#header"
+   id="go-to-top-link"
+   title="Scroll to the top"><em class="icon-arrow-up"></em></a>
 
-<div class="borders" id="border-top"></div><div class="borders" id="border-right"></div><div class="borders" id="border-bottom"></div><div class="borders" id="border-left"></div>
+<div class="borders" id="border-top"></div>
+<div class="borders" id="border-right"></div>
+<div class="borders" id="border-bottom"></div>
+<div class="borders" id="border-left"></div>
 
 <link rel='stylesheet' id='prettyphoto-css'  href='/wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.css?ver=4.8.0.1' type='text/css' media='screen' />
 <script type='text/javascript' src='/wp-content/themes/tosca/js/site.js?ver=4.5'></script>
