@@ -1,5 +1,11 @@
+{% if page.locale == 'ru' %}
+    {% assign lang = "ru-RU" %}
+{% else %}
+    {% assign lang = "en-US" %}
+{% endif %}
+
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}"
+<html lang="{{ lang | default: lang | default: "en" }}"
       class="no-js page-border"
       itemscope="itemscope"
       itemtype="http://schema.org/WebPage">
