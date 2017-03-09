@@ -9,6 +9,7 @@ ruby '2.4.0'
 #
 group :development do
   gem 'jekyll' # static blog <https://github.com/jekyll/jekyll>
+  gem 'jekyll-redirect-from'
 end
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
