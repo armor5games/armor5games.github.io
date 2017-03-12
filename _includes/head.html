@@ -22,10 +22,24 @@
        padding: 0 !important;
      }
     </style>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <link rel='stylesheet' id='tosca-google-fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3Aregular%7COpen+Sans+Condensed%3A700&amp;subset=cyrillic' type='text/css' media='all' />
-    <link rel='stylesheet' id='tosca-main-css'  href='/wp-content/themes/tosca/style.css?ver=4.5' type='text/css' media='all' />
-    <style id='tosca-main-inline-css' type='text/css'>
+    <link rel="canonical"
+          href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="stylesheet"
+          id="tosca-google-fonts-css"
+          href="//fonts.googleapis.com/css?family=Open+Sans%3Aregular%7COpen+Sans+Condensed%3A700&amp;subset=cyrillic"
+          type="text/css"
+          media="all" />
+    <link rel="stylesheet"
+          id="tosca-main-css"
+          href="/wp-content/themes/tosca/style.css?ver=4.5"
+          type="text/css"
+          media="all" />
+    <link rel="stylesheet"
+          id="js_composer_front-css"
+          href="/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.8.0.1"
+          type="text/css"
+          media="all" />
+    <style id="tosca-main-inline-css" type="text/css">
      body,#post-list h3 .meta,.woocommerce .product .thumb a .price {
        font-family:"Open Sans",Arial,sans-serif;
        font-weight:400;
@@ -34,20 +48,32 @@
        font-family:"Open Sans Condensed",Arial,sans-serif;
        font-weight:700;
      }
-    {% if page.permalink != '/' and page.permalink != '/ru/' %}
-        #featured-media .overlay{background-color:#111213;opacity:0.5;}
-    {% endif %}
     </style>
-    {% if page.permalink == '/' or page.permalink == '/ru' %}
-        <link rel='stylesheet' id='js_composer_front-css'  href='/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.8.0.1' type='text/css' media='all' />
-    {% endif %}
-    <script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.3'></script>
-    <script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0'></script>
-    <link rel='https://api.w.org/' href='/wp-json/index.html' />
-    <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+    <script type="text/javascript"
+            src="/wp-includes/js/jquery/jquery.js?ver=1.12.3"></script>
+    <script type="text/javascript"
+            src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0"></script>
+    <link rel="https://api.w.org/" href="/wp-json/index.html" />
+    <!--[if lte IE 9]><link rel="stylesheet"
+        type="text/css"
+        href="/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css"
+        media="screen"><![endif]-->
+    <!--[if IE  8]><link rel="stylesheet"
+        type="text/css"
+        href="/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css"
+        media="screen"><![endif]-->
 
     <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1447073003125{margin-top: 90px !important;}</style>
     <noscript><style type="text/css">.wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
 
     {% include google-analytics.html %}
+
+    {% for path_to_partial in page.head_include_paths %}
+    {% include {{ path_to_partial }} %}
+    {% endfor %}
+
+    {% for raw_html in page.head_html_blocks %}
+    {{ raw_html }}
+    {% endfor %}
+
 </head>

@@ -5,14 +5,23 @@
 {% endif %}
 
 <!DOCTYPE html>
-<html lang="{{ lang | default: lang | default: "en" }}"
+<html lang="{{ lang | default: lang | default: 'en' }}"
       class="no-js page-border"
       itemscope="itemscope"
       itemtype="http://schema.org/WebPage">
 
     {% include head.html %}
 
-    <body class="{{ page.css_body_classes }} page-template-default hide-background menu-separators animate-elems-in-view has-sticky-header featured-header-full wpb-js-composer js-comp-ver-4.8.0.1 vc_responsive">
+    <body class="page-template-default
+                 hide-background
+                 menu-separators
+                 animate-elems-in-view
+                 has-sticky-header
+                 featured-header-full
+                 wpb-js-composer
+                 js-comp-ver-4.8.0.1
+                 vc_responsive
+                 {{ page.css_body_classes }}">
 
     {% include header.html %}
 
