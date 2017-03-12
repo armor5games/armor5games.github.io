@@ -8,6 +8,14 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+gems:
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
@@ -19,10 +27,34 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 version: 0.0.3
 
-gems:
-  - jekyll-redirect-from
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
+navigation:
+  ru:
+  - name: Главная
+    url: /ru/
+    layout: home
+  - name: Игры
+    url: /ru/games/
+  - name: О нас
+    url: /ru/about/
+    submenu:
+    - name: Команда
+      url: /ru/about/team/
+  - name: Вакансии
+    url: /ru/careers/
+  - name: Контакты
+    url: /ru/contacts/
+  en:
+  - name: Home
+    url: /
+    layout: home
+  - name: Games
+    url: /en/games/
+  - name: About us
+    url: /en/about/
+    submenu:
+    - name: Team
+      url: /en/about/team/
+  - name: Careers
+    url: /ru/careers/
+  - name: Contacts
+    url: /ru/contacts/

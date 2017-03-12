@@ -24,103 +24,145 @@
 
             <div id="menu" class="clearfix">
                 <div class="menu-wrapper">
-                    {% if page.locale == 'ru' %}
-                        <ul>
-                            <li id="menu-item-751"
-                                class="menu-item
-                                       menu-item-type-custom
-                                       menu-item-object-custom
-                                       current-menu-item
-                                       current_page_item
-                                       menu-item-home
-                                       menu-item-751"><a href="/ru">Главная</a></li>
-                            <li id="menu-item-420"
-                                class="menu-item
-                                       menu-item-type-custom
-                                       menu-item-object-custom
-                                       current-menu-item
-                                       current_page_item
-                                       menu-item-home
-                                       menu-item-751"><a href="/ru/games/">Игры</a></li>
-                            <li id="menu-item-428"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       current-menu-ancestor
-                                       current-menu-parent
-                                       current_page_parent
-                                       current_page_ancestor
-                                       menu-item-has-children
-                                       menu-item-428"><a href="/ru/about/">О нас</a>
-                                <ul class="sub-menu"><li id="menu-item-450"
-                                                         class="menu-item
-                                                                menu-item-type-post_type
-                                                                menu-item-object-page
-                                                                current-menu-item
-                                                                current_page_item
-                                                                page_item
-                                                                menu-item-450"><a href="/ru/about/team/">Команда</a></li></ul>
-                            </li>
-                            <li id="menu-item-460"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       menu-item-460"><a href="/ru/careers/">Вакансии</a></li>
-                            <li id="menu-item-734"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       menu-item-734"><a href="/ru/contacts/">Контакты</a></li>
-                        </ul>
-                    {% else %}
-                        <ul>
-                            <li id="menu-item-751"
-                                class="menu-item
-                                       menu-item-type-custom
-                                       menu-item-object-custom
-                                       current-menu-item
-                                       current_page_item
-                                       menu-item-home
-                                       menu-item-751"><a href="/">Home</a></li>
-                            <li id="menu-item-420"
-                                class="menu-item
-                                       menu-item-type-custom
-                                       menu-item-object-custom
-                                       current-menu-item
-                                       current_page_item
-                                       menu-item-home
-                                       menu-item-751"><a href="/en/games/">Games</a></li>
-                            <li id="menu-item-428"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       current-menu-ancestor
-                                       current-menu-parent
-                                       current_page_parent
-                                       current_page_ancestor
-                                       menu-item-has-children
-                                       menu-item-428"><a href="/en/about/">About us</a>
-                                <ul class="sub-menu"><li id="menu-item-450"
-                                                         class="menu-item
-                                                                menu-item-type-post_type
-                                                                menu-item-object-page
-                                                                current-menu-item
-                                                                current_page_item
-                                                                page_item
-                                                                page-item-448"><a href="/en/about/team/">Team</a></li></ul>
-                            </li>
-                            <li id="menu-item-460"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       menu-item-460"><a href="/en/careers/">Careers</a></li>
-                            <li id="menu-item-734"
-                                class="menu-item
-                                       menu-item-type-post_type
-                                       menu-item-object-page
-                                       menu-item-734"><a href="/en/contacts/">Contacts</a></li>
-                        </ul>
-                    {% endif %}
+                    <ul>
+                    {% for menuitem in site.navigation[page.locale] %}
+                        {% assign item_home_classes = nil %}
+                        {% if menuitem.layout == 'home' %}
+                          {% assign item_home_classes = 'menu-item-home' %}
+                        {% endif %}
+
+                        {% assign item_classes = nil %}
+                        {% if menuitem.url == page.url %}
+                          {% assign item_classes = 'current-menu-item current_page_item' %}
+                        {% endif %}
+
+                        {% assign item_parent_classes = nil %}
+                        {% if menuitem.submenu %}
+                          {% assign item_parent_classes = 'menu-item-has-children' %}
+                        {% endif %}
+
+                        <li class="menu-item
+                                   menu-item-type-custom
+                                   menu-item-object-custom
+                                   {{ item_home_classes }}
+                                   {{ item_parent_classes }}
+                                   {{ item_classes }}">
+                            <a href="{{ menuitem.url }}">{{ menuitem.name }}</a>
+
+                            {% if menuitem.submenu %}
+                            <ul class="sub-menu">
+                            {% for subitem in menuitem.submenu %}
+                                {% assign subitem_classes = nil %}
+                                {% if subitem.url == page.url %}
+                                  {% assign subitem_classes = 'current-menu-item current_page_item' %}
+                                {% endif %}
+                                <li class=" menu-item
+                                           menu-item-type-post_type
+                                           menu-item-object-page
+                                           page_item
+                                           {{ subitem_classes }}"><a href="{{ subitem.url }}">{{ subitem.name }}</a></li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                        <!-- {% if page.locale == 'ru' %}
+                             <ul>
+                             <li id="menu-item-751"
+                             class="menu-item
+                             menu-item-type-custom
+                             menu-item-object-custom
+                             current-menu-item
+                             current_page_item
+                             menu-item-home
+                             menu-item-751"><a href="/ru">Главная</a></li>
+                             <li id="menu-item-420"
+                             class="menu-item
+                             menu-item-type-custom
+                             menu-item-object-custom
+                             current-menu-item
+                             current_page_item
+                             menu-item-home
+                             menu-item-751"><a href="/ru/games/">Игры</a></li>
+                             <li id="menu-item-428"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             current-menu-ancestor
+                             current-menu-parent
+                             current_page_parent
+                             current_page_ancestor
+                             menu-item-has-children
+                             menu-item-428"><a href="/ru/about/">О нас</a>
+                             <ul class="sub-menu"><li id="menu-item-450"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             current-menu-item
+                             current_page_item
+                             page_item
+                             menu-item-450"><a href="/ru/about/team/">Команда</a></li></ul>
+                             </li>
+                             <li id="menu-item-460"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             menu-item-460"><a href="/ru/careers/">Вакансии</a></li>
+                             <li id="menu-item-734"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             menu-item-734"><a href="/ru/contacts/">Контакты</a></li>
+                             </ul>
+                             {% else %}
+                             <ul>
+                             <li id="menu-item-751"
+                             class="menu-item
+                             menu-item-type-custom
+                             menu-item-object-custom
+                             current-menu-item
+                             current_page_item
+                             menu-item-home
+                             menu-item-751"><a href="/">Home</a></li>
+                             <li id="menu-item-420"
+                             class="menu-item
+                             menu-item-type-custom
+                             menu-item-object-custom
+                             current-menu-item
+                             current_page_item
+                             menu-item-home
+                             menu-item-751"><a href="/en/games/">Games</a></li>
+                             <li id="menu-item-428"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             current-menu-ancestor
+                             current-menu-parent
+                             current_page_parent
+                             current_page_ancestor
+                             menu-item-has-children
+                             menu-item-428"><a href="/en/about/">About us</a>
+                             <ul class="sub-menu"><li id="menu-item-450"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             current-menu-item
+                             current_page_item
+                             page_item
+                             page-item-448"><a href="/en/about/team/">Team</a></li></ul>
+                             </li>
+                             <li id="menu-item-460"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             menu-item-460"><a href="/en/careers/">Careers</a></li>
+                             <li id="menu-item-734"
+                             class="menu-item
+                             menu-item-type-post_type
+                             menu-item-object-page
+                             menu-item-734"><a href="/en/contacts/">Contacts</a></li>
+                             </ul>
+                             {% endif %} -->
                 </div>
 
             </div>
