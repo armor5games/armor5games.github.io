@@ -23,7 +23,7 @@
      }
     </style>
     <link rel="canonical"
-          href="{{ page.url | replace:'index.html','' | absolute_url }}">
+          href="{{ page.url | remove: 'index.html' | absolute_url }}">
     <link rel="stylesheet"
           id="tosca-google-fonts-css"
           href="//fonts.googleapis.com/css?family=Open+Sans%3Aregular%7COpen+Sans+Condensed%3A700&amp;subset=cyrillic"
