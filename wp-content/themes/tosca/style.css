@@ -865,6 +865,35 @@ ul.lang-switcher:before{
     color: rgba(255, 255 ,255, 0.5);
 }
 
+@media (max-width: 479px) {
+    #logo h1 a img {
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url(/wp-content/uploads/2015/11/logo-bird.png) no-repeat;
+        width: 60px;
+        height: 67px;
+        padding-left: 60px; /* equal to width of background new image */
+    }
+
+    #header #mobile-menu { right: 55px; }
+
+    /* lang-switcher */
+    ul.lang-switcher{
+        position: absolute;
+        top: 58%;
+        right: 10px;
+        margin-top: -25px;
+        width: auto;
+        height: 50px;
+        overflow: hidden;
+        z-index: 4;
+    }
+    ul.lang-switcher:before {
+        height: 80%;
+    }
+}
+
 /* 44. media queries */
 /* 45. media query: large mobile */
 @media (min-width: 480px) {
