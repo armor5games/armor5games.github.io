@@ -886,8 +886,8 @@ ul.lang-switcher:before{
     .widget_cerchez_dribbble a { max-width: none; width: 100%; }
 
     #content, #footer .container { padding-top: 20px; padding-bottom: 20px; }
-    
-    
+
+
     /* lang-switcher */
     ul.lang-switcher{
         position: absolute;
@@ -902,7 +902,7 @@ ul.lang-switcher:before{
     ul.lang-switcher:before {
         height: 80%;
     }
-    
+
 }
 
 /* 46. media query: tablet */
@@ -1069,7 +1069,7 @@ ul.lang-switcher:before{
     .module-builder-layout .module-type-divider h4 { padding: 1.5em; }
 
     #content, #footer .container { padding-top: 30px; padding-bottom: 30px; }
-    
+
     ul.lang-switcher{position: relative;}
     ul.lang-switcher:before {
         height: 50%;
