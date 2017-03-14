@@ -877,9 +877,9 @@ ul.lang-switcher:before{
     }
 }
 
-@media (min-width: 300px) and (max-width: 479px) {
-    #logo h1 a img {max-width: 85%;}
-}
+@media (min-width: 300px) and (max-width: 399px) {#logo h1 a img {max-width: 70%;}}
+@media (min-width: 400px) and (max-width: 449px) {#logo h1 a img {max-width: 80%;}}
+@media (min-width: 450px) and (max-width: 479px) {#logo h1 a img {max-width: 90%;}}
 
 @media (max-width: 479px) {
     #header #mobile-menu { right: 55px; }
