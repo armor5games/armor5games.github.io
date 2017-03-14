@@ -865,7 +865,7 @@ ul.lang-switcher:before{
     color: rgba(255, 255 ,255, 0.5);
 }
 
-@media (max-width: 479px) {
+@media (max-width: 299px) {
     #logo h1 a img {
         display: block;
         -moz-box-sizing: border-box;
@@ -875,10 +875,14 @@ ul.lang-switcher:before{
         height: 67px;
         padding-left: 60px; /* equal to width of background new image */
     }
+}
 
+@media (min-width: 300px) and (max-width: 479px) {
+    #logo h1 a img {max-width: 85%;}
+}
+
+@media (max-width: 479px) {
     #header #mobile-menu { right: 55px; }
-
-    /* lang-switcher */
     ul.lang-switcher{
         position: absolute;
         top: 58%;
