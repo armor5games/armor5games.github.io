@@ -575,7 +575,14 @@ html.post-preview .admin-bar.has-sticky-header #header { top: 0; }
 .cerchez-slider .slider .item .caption .text .inner, #featured-media .featured-caption .text .inner { display: inline-block; margin-bottom: 0; font-size: 1.25em; pointer-events: all; padding: 0.5em 1em; background-color: rgba(0,0,0,0.7); color: #fff; }
 #content .cerchez-slider .slider .item .caption .text .inner { background-color: #fff; color: #111213; }
 #featured-media.caption-bottom-left .cerchez-slider .slider .item .caption .text, #featured-media.caption-bottom-left .featured-caption .text { left: -1px; bottom: -1px; }
-#featured-media.caption-bottom-right .cerchez-slider .slider .item .caption .text, #featured-media.caption-bottom-right .featured-caption .text { right: -1px; bottom: -1px; }
+
+#featured-media.caption-bottom-right .cerchez-slider .slider .item .caption
+.text, #featured-media.caption-bottom-right .featured-caption .text {
+    bottom: -1px;
+    /* right: -1px; */
+    right: 0px; /* fix annoying left one pixel line/border */
+}
+
 .no-js .caption-centered .cerchez-slider-full-height .slider .item .caption, .caption-centered .cerchez-slider-full-height .cerchez-slider-init .slider .item .caption, #featured-media.caption-centered .featured-caption, .caption-special .cerchez-slider-full-height .cerchez-slider-init .slider .item .caption, #featured-media.caption-special .featured-caption, .no-js .caption-bottom-centered .cerchez-slider-full-height .slider .item .caption, .caption-bottom-centered .cerchez-slider-full-height .cerchez-slider-init .slider .item .caption, #featured-media.caption-bottom-centered .featured-caption { display: table; }
 #featured-media.caption-centered .cerchez-slider .slider .item .caption .text, #featured-media.caption-centered .featured-caption .text, #featured-media.caption-special .cerchez-slider .slider .item .caption .text, #featured-media.caption-special .featured-caption .text, #featured-media.caption-bottom-centered .cerchez-slider .slider .item .caption .text, #featured-media.caption-bottom-centered .featured-caption .text { display: table-cell; position: static; padding: 0 1em; vertical-align: middle; }
 #featured-media.caption-bottom-centered .cerchez-slider .slider .item .caption .text, #featured-media.caption-bottom-centered .featured-caption .text { vertical-align: bottom; }
