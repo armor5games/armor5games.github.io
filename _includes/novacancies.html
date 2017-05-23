@@ -7,18 +7,31 @@
                         <div class="wpb_single_image wpb_content_element vc_align_center">
                             <h2 class="wpb_heading wpb_singleimage_heading">Vacancies</h2>
                             <figure class="wpb_wrapper vc_figure">
+
+                                {% if page.url == '/ru/careers/' || page.url == '/en/careers/' %}
+                                    {% assign is_carrier_page = true %}
+                                {% else %}
+                                    {% assign is_carrier_page = false %}
+                                {% endif %}
+
+                                {% if is_carrier_page == false %}
                                 <a href="/ru/careers/"
                                    target="_self"
-                                   class="vc_single_image-wrapper vc_box_border_grey"
-                                ><img width="1024"
-                                      height="683"
-                                      src="/wp-content/uploads/2015/10/3J6A1998-1024x683.jpg"
-                                      class="vc_single_image-img attachment-large"
-                                      alt="3J6A1998"
-                                      srcset="/wp-content/uploads/2015/10/3J6A1998-1024x683.jpg 1024w,
-                                              /wp-content/uploads/2015/10/3J6A1998-300x200.jpg 300w"
-                                      sizes="(max-width: 1024px) 100vw, 1024px"
-                                 ></a>
+                                   class="vc_single_image-wrapper vc_box_border_grey">
+                                {% endif %}
+
+                                    <img width="1024"
+                                         height="683"
+                                         src="/wp-content/uploads/2015/10/3J6A1998-1024x683.jpg"
+                                         class="vc_single_image-img attachment-large"
+                                         alt="3J6A1998"
+                                         srcset="/wp-content/uploads/2015/10/3J6A1998-1024x683.jpg 1024w,
+                                                 /wp-content/uploads/2015/10/3J6A1998-300x200.jpg 300w"
+                                         sizes="(max-width: 1024px) 100vw, 1024px">
+
+                                {% if is_carrier_page == false %}
+                                </a>
+                                {% endif %}
                             </figure>
                         </div>
                     </div>
