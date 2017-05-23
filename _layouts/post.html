@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<!-- hide-background -->
+<!-- single-format-standard -->
+<body class="animate-elems-in-view
+             featured-header-medium
+             has-sticky-header
+             js-comp-ver-4.8.0.1
+             menu-separators
+             single
+             single-post
+             vc_responsive
+             wpb-js-composer
+             {{ page.css_body_classes }}">
+
+    {% include header.html %}
+
+    {{ page.featured_media_block }}
+
+    <section id="content">
+        <div class="container">
+            {{ content }}
+
+            <!--
+            <div class="sep before-post-meta-info"></div>
+            <p class="post-meta-info">
+                <span><em class="icon-clock"></em></span>
+                <span><em class="icon-user"></em></span><br>
+                <span><em class="icon-category"></em></span>
+                <span><em class="icon-tag"></em></span>
+            </p>
+            -->
+        </div>
+    </section>
+
+    {% include footer.html %}
+
+</body>

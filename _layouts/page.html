@@ -2,4 +2,21 @@
 layout: default
 ---
 
-{{ content }}
+<body class="animate-elems-in-view
+             featured-header-full
+             has-sticky-header
+             js-comp-ver-4.8.0.1
+             menu-separators
+             page
+             page-template-default
+             vc_responsive
+             wpb-js-composer
+             {{ page.css_body_classes }}">
+
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+</body>

@@ -1,0 +1,51 @@
+---
+layout: page
+locale: ru
+title: Блог Armor5Games
+permalink: /ru/blog/
+permalink_en: /en/blog/
+css_header_classes: "no-featured-media"
+---
+<section id="content">
+    <div class="container">
+        <div id="post-list" class="col grid12">
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+
+            {% for post in site.posts %}
+
+            {% if post.thumbnail_src.size > 0 %}
+                 {% assign item_with_thumbnail_css_classes = "has-post-thumbnail" %}
+            {% else %}
+                 {% assign item_with_thumbnail_css_classes = "" %}
+            {% endif %}
+
+            <article id="post-454"
+                     class="post
+                            type-post
+                            status-publish
+                            format-standard
+                            category-blog
+                            tag-post
+                            hentry
+                            {{ item_with_thumbnail_css_classes }}">
+                <h3>
+                    <a href="{{ post.url | relative_url }}"
+                       class="title">
+                        {% if post.thumbnail_src.size > 0 %}
+                        <img width="150" height="150"
+                             src="{{ post.thumbnail_src }}"
+                             class="attachment-thumbnail size-thumbnail wp-post-image"
+                             alt="">
+                        {% endif %}
+                        <span>{{ post.title | escape }}</span>
+                    </a>
+                    <span class="meta">
+                        <a><em class="icon-clock"></em> {{ post.date | date: date_format }}</a>
+                    </span>
+                </h3>
+            </article>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
