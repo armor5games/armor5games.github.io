@@ -4,5 +4,50 @@ locale: en
 title: Our Games — Armor5Games
 permalink: /en/games/
 permalink_ru: /ru/games/
-css_body_classes: "page"
+css_body_classes: featured-header-medium page-template-default
+css_header_classes: "no-featured-media"
+head_html_blocks:
+- |-
+  <style id="tosca-main-inline-css" type="text/css">
+      body,#post-list h3 .meta,.woocommerce .product .thumb a .price{font-family:"Open Sans",Arial,sans-serif;font-weight:400;}h1,h2,h3,h4,h5,h6,.cerchez-filter-selectors a,.thumb .photo .info .title{font-family:"Open Sans Condensed",Arial,sans-serif;font-weight:700;}
+  </style>
 ---
+
+{% if page.locale == 'ru' %}
+    {% assign home_url = '/ru' %}
+{% else %}
+    {% assign home_url = '/' %}
+{% endif %}
+
+<section id="content">
+    <div class="container">
+        <div class="entry-content" itemprop="mainContentOfPage">
+            <h3 class="no-bottom">Our Games</h3>
+            <hr class="special" />
+            <p>
+                <strong>We believe in playing together</strong>,
+                 be it cooperatively or competitively.
+            </p>
+            <p>
+                <strong>We believe in outstanding game experiences</strong>
+                and putting the player first.
+            </p>
+            <p>
+                <strong>We believe in attention to detail,</strong>
+                in extensive player testing, in games that show the
+                extra bit of development love we put in it.
+            </p>
+            <p>
+                <strong>We believe in games that makes people happier.</strong>
+            </p>
+            <p>&nbsp;</p>
+            <div class="col grid6 alpha pct">
+                <div class="thumb fade animate-in-view">
+                    <div class="photo"><a href="{{ home_url }}"><img src="/wp-content/uploads/2015/10/2-11-420x420_c.jpg" width="420" height="420" alt="" /><span class="info"><span class="icon-arrow-right"></span></span></a></div>
+                    <h4 class="padding-bottom">Rise of Pirates</h4>
+                </div>
+            </div>
+            <div class="clear"></div><div class="clear"></div>
+        </div>
+    </div>
+</section>
