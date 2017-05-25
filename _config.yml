@@ -35,6 +35,9 @@ navigation:
     layout: home
   - name: Игры
     url: /ru/games/
+    submenu:
+    - name: Rise of Pirates
+      url: /ru/games/rise-of-pirates
   - name: О нас
     url: /ru/about/
     submenu:
@@ -50,6 +53,9 @@ navigation:
     layout: home
   - name: Games
     url: /en/games/
+    submenu:
+    - name: Rise of Pirates
+      url: /en/games/rise-of-pirates
   - name: About us
     url: /en/about/
     submenu:
