@@ -62,6 +62,6 @@ navigation:
     - name: Team
       url: /en/about/team/
   - name: Careers
-    url: /ru/careers/
+    url: /en/careers/
   - name: Contacts
-    url: /ru/contacts/
+    url: /en/contacts/
