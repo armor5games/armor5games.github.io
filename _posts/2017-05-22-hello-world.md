@@ -1,4 +1,5 @@
 ---
+sitemap: false
 title:  "Привет мир!"
 date:   2017-05-22 14:00:00 +0300
 layout: post
